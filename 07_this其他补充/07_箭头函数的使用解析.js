@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-10-29 18:52:22
+ * @LastEditTime: 2021-10-29 23:34:47
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \邂逅js高级\07_this其他补充\07_箭头函数的使用解析.js
+ */
 // 1.编写箭头函数
 // 1> (): 参数
 // 2> =>: 箭头
@@ -13,7 +21,7 @@ function bar(num1, num2, num3) {
 
 // 高阶函数在使用时, 也可以传入箭头函数
 var nums = [10, 20, 45, 78]
-nums.forEach((item, index, arr) => {})
+nums.forEach((item, index, arr) => { })
 
 // 箭头函数有一些常见的简写:
 // 简写一: 如果参数只有一个, ()可以省略
@@ -29,8 +37,8 @@ console.log(newNums)
 
 // filter/map/reduce
 var result = nums.filter(item => item % 2 === 0)
-                 .map(item => item * 100)
-                 .reduce((preValue, item) => preValue + item)
+  .map(item => item * 100)
+  .reduce((preValue, item) => preValue + item)
 console.log(result)
 
 // 简写三: 如果一个箭头函数, 只有一行代码, 并且返回一个对象, 这个时候如何编写简写
