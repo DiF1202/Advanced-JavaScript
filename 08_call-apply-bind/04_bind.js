@@ -19,7 +19,7 @@ Function.prototype.bind = function (thisArg, ...args) {
     }
     return proxyFn
 }
-
+// 
 
 function foo() {
     console.log('foo被执行', this)
