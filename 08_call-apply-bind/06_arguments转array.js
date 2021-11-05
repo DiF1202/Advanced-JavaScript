@@ -25,21 +25,18 @@ function foo(num1, num2) {
 
 foo(10, 20, 30, 40, 50)
 
-// 额外补充的知识点: Array中的slice实现
-// Array.prototype.hyslice = function(start, end) {
-//   var arr = this
-//   start = start || 0
-//   end = end || arr.length
-//   var newArray = []
-//   for (var i = start; i < end; i++) {
-//     newArray.push(arr[i])
-//   }
-//   return newArray
-// }
+foo(10, 20, 30, 40, 50)
 
-// var newArray = Array.prototype.hyslice.call(["aaaa", "bbb", "cccc"], 1, 3)
-// console.log(newArray)
 
-// var names = ["aaa", "bbb", "ccc", "ddd"]
-// names.slice(1, 3)
 
+//实现Array中slice
+Array.prototype.hyslice = function (start, end) {
+  var arr = this
+  start = start || 0
+  end = end || arr.length
+  var newArray = []
+  for (var i = start; i < end; i++) {
+    newArray.push(arr[i])
+  }
+  return newArray
+}
