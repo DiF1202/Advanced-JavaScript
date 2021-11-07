@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-11-05 14:28:19
+ * @LastEditTime: 2021-11-07 09:54:47
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \邂逅js高级\09_纯函数-柯里化-组合\05_柯里化-逻辑的复用01.js
+ */
 // function sum(m, n) {
 //   return m + n
 // }
@@ -8,18 +16,15 @@
 // console.log(sum(5, 1100))
 // console.log(sum(5, 555))
 
-function makeAdder(count) {
-  count = count * count
-
-  return function(num) {
-    return count + num
+function makerAdder(adder) {
+  return function (item) {
+    return adder + item
   }
 }
 
-// var result = makeAdder(5)(10)
-// console.log(result)
-var adder5 = makeAdder(5)
-adder5(10)
-adder5(14)
-adder5(1100)
-adder5(555)
+var adder = makerAdder(5)
+
+console.log(adder(5))
+console.log(adder(6))
+console.log(adder(7))
+console.log(adder(8))

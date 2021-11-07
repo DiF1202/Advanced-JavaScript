@@ -12,7 +12,7 @@ function add2(x, y, z) {
 function makeAdder(count) {
   count = count * count
 
-  return function(num) {
+  return function (num) {
     return count + num
   }
 }
