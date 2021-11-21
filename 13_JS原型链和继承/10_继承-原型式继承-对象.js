@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-11-20 19:13:03
- * @LastEditTime: 2021-11-20 23:16:31
+ * @LastEditTime: 2021-11-21 00:29:22
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \邂逅js高级\13_JS原型链和继承\10_继承-原型式继承-对象.js
@@ -39,7 +39,6 @@ var test = {
 };
 
 function createObject2(obj) {
-  //定义空函数
   function fn() {}
   fn.prototype = obj;
   var newobj = new fn();
