@@ -1,0 +1,77 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-22 12:15:08
+ * @LastEditTime: 2021-11-23 01:22:06
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \邂逅js高级\16_ES6知识点讲解\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button>按钮1</button>
+  <button>按钮2</button>
+  <button>按钮3</button>
+  <button>按钮4</button>
+
+  <!-- <script src="./06_let-const和window关系.js"></script> -->
+  <!-- <script src="./07_块级作用域的理解.js"></script> -->
+  <!-- <script src="./08_ES6的块级作用域.js"></script> -->
+  <!-- <script src="./09_if-switch-for块级代码.js"></script> -->
+  <script src="./10_块级作用域的应用场景.js"></script>
+  <script>
+    // var a = ["1", '2', '3'].map(parseInt)()
+    // console.log(a)
+    // var a = new Array();
+    // alert(a.constructor); // function Array(){..}
+
+    // function foo() { }
+    // var f1 = new foo()
+    // console.log(f1.constrcutor);
+    // var a = Object.prototype.toString;
+
+    // console.log(a.call(2));
+    // console.log(a.call(true));
+    // console.log(a.call('str'));
+    // console.log(a.call([]));
+    // console.log(a.call(function () { }));
+    // console.log(a.call({}));
+    // console.log(a.call(undefined));
+    // console.log(a.call(null));
+    // console.log([1, 2, 3, 3].toString())
+
+    // var obj1 = new Object()
+    // console.log(Object.prototype.isPrototypeOf(obj1))
+    // var a = new Boolean(false);
+    // if (!a) {
+    //   console.log("Oops"); // never runs
+    // }
+    // console.log(typeof a)
+    // const c = {}
+    // // c = null
+    // if (c) {
+    //   console.log("asjfsbakdbakds")
+    // }
+    let obj1 = {
+      name: {
+        age: 1
+      }
+    }
+    let obj2 = { ...obj1 }
+    let obj3 = ({}, obj1)
+    obj1.name.age = 100
+    // console.log(obj2)
+    // console.log(obj3)
+  </script>
+</body>
+
+</html>
