@@ -1,15 +1,23 @@
+/*
+ * @Author: your name
+ * @Date: 2021-11-26 01:08:47
+ * @LastEditTime: 2021-11-26 20:34:04
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \邂逅js高级\25_Promise的使用\06_Promise对象方法-then.js
+ */
 // Promise有哪些对象方法
-// console.log(Object.getOwnPropertyDescriptors(Promise.prototype))
+// console.log(Object.getOwnPropertyDescriptors(Promise.prototype));
 
-const promise = new Promise((resolve, reject) => {
-  resolve("hahaha")
-})
+const promise = new Promise((reslove, reject) => {
+  reslove("hdhhdd");
+});
 
 // 1.同一个Promise可以被多次调用then方法
 // 当我们的resolve方法被回调时, 所有的then方法传入的回调函数都会被调用
-// promise.then(res => {
-//   console.log("res1:", res)
-// })
+// promise.then((res) => {
+//   console.log("res1:", res);
+// });
 
 // promise.then(res => {
 //   console.log("res2:", res)
@@ -21,33 +29,47 @@ const promise = new Promise((resolve, reject) => {
 
 // 2.then方法传入的 "回调函数: 可以有返回值
 // then方法本身也是有返回值的, 它的返回值是Promise
+// promise.then((res) => {
+//   return "aaaa";
+// });
 
-// 1> 如果我们返回的是一个普通值(数值/字符串/普通对象/undefined), 那么这个普通的值被作为一个新的Promise的resolve值
-// promise.then(res => {
-//   return "aaaaaa"
-// }).then(res => {
-//   console.log("res:", res)
-//   return "bbbbbb"
-// })
-
-// 2> 如果我们返回的是一个Promise
-// promise.then(res => {
+// promise.then((res) => {
 //   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve(111111)
-//     }, 3000)
-//   })
-// }).then(res => {
-//   console.log("res:", res)
-// })
+//     resolve("aaaa");
+//   });
+// });
 
-// 3> 如果返回的是一个对象, 并且该对象实现了thenable
-promise.then(res => {
-  return {
-    then: function(resolve, reject) {
-      resolve(222222)
-    }
-  }
-}).then(res => {
-  console.log("res:", res)
-})
+// promise
+//   .then((res) => {
+//     return "aaaa";
+//   })
+//   .then((res) => {
+//     console.log(res);
+//     return "bbb";
+//   })
+//   .then((res) => {
+//     console.log(res);
+//   });
+
+promise
+  .then((res) => {
+    return {
+      then: function (resolve, reject) {
+        resolve("11111");
+      },
+    };
+  })
+  .then((res) => {
+    console.log(res);
+  });
+// promise
+//   .then((res) => {
+//     return {
+//       then: function (resolve, reject) {
+//         resolve(222222);
+//       },
+//     };
+//   })
+//   .then((res) => {
+//     console.log("res:", res);
+//   });

@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-11-26 01:08:47
+ * @LastEditTime: 2021-11-26 18:58:54
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \邂逅js高级\25_Promise的使用\05_Promise的resolve参数.js
+ */
 /**
  * resolve(参数)
  *  1> 普通的值或者对象  pending -> fulfilled
@@ -8,43 +16,16 @@
  *    那么也会执行该then方法, 并且又该then方法决定后续状态
  */
 
-// 1.传入Promise的特殊情况
-// const newPromise = new Promise((resolve, reject) => {
-//   // resolve("aaaaaa")
-//   reject("err message")
-// })
-
-// new Promise((resolve, reject) => {
-//   // pending -> fulfilled
-//   resolve(newPromise)
-// }).then(res => {
-//   console.log("res:", res)
-// }, err => {
-//   console.log("err:", err)
-// })
-
-// 2.传入一个对象, 这个兑现有then方法
+const newPromise = new Promise((resolve, reject) => {
+  reject("失败了！");
+});
 new Promise((resolve, reject) => {
-  // pending -> fulfilled
-  const obj = {
-    then: function(resolve, reject) {
-      // resolve("resolve message")
-      reject("reject message")
-    }
-  }
-  resolve(obj)
-}).then(res => {
-  console.log("res:", res)
-}, err => {
-  console.log("err:", err)
-})
-
-// eatable/runable
-const obj = {
-  eat: function() {
-
+  reject(newPromise);
+}).then(
+  (res) => {
+    console.log(res);
   },
-  run: function() {
-
+  (err) => {
+    console.log(err);
   }
-}
+);

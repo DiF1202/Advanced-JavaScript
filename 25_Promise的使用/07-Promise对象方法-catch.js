@@ -24,7 +24,6 @@
 //   console.log("err:", err)
 // })
 
-
 // 3.拒绝捕获的问题(前面课程)
 // promise.then(res => {
 
@@ -49,16 +48,21 @@
 
 // 4.catch方法的返回值
 const promise = new Promise((resolve, reject) => {
-  reject("111111")
-})
+  reject("111111");
+});
 
-promise.then(res => {
-  console.log("res:", res)
-}).catch(err => {
-  console.log("err:", err)
-  return "catch return value"
-}).then(res => {
-  console.log("res result:", res)
-}).catch(err => {
-  console.log("err result:", err)
-})
+promise
+  .then((res) => {
+    console.log("res:", res);
+  })
+  .catch((err) => {
+    console.log("err:", err);
+    return "catch return value";
+  })
+  .then((res) => {
+    //then会被执行
+    console.log("res result:", res);
+  })
+  .catch((err) => {
+    console.log("err result:", err);
+  });

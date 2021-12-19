@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-10-29 00:25:11
- * @LastEditTime: 2021-10-29 11:45:18
+ * @LastEditTime: 2021-12-03 01:11:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \邂逅js高级\06_js中this的指向\04_绑定规则一-默认绑定.js
@@ -13,6 +13,7 @@
 // }
 
 // foo()
+console.log(this)
 
 // 2.案例二: 三个全都是window
 // function foo1() {
@@ -31,7 +32,6 @@
 
 // foo3()
 
-
 // 3.案例三:
 // var obj = {
 //   name: "why",
@@ -42,7 +42,6 @@
 
 // var bar = obj.foo
 // bar() // window!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 
 // 4.案例四:
 // function foo() {
@@ -57,19 +56,19 @@
 // bar() // window!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 // 5.案例五:
-function foo() {
-  function bar() {
-    console.log(this)
-  }
-  return bar
-}
+// function foo() {
+//   function bar() {
+//     console.log(this)
+//   }
+//   return bar
+// }
 
-var fn = foo()
-fn() // window
+// var fn = foo()
+// fn() // window
 
-var obj = {
-  name: "why",
-  eating: fn
-}
+// var obj = {
+//   name: "why",
+//   eating: fn
+// }
 
-obj.eating() // 隐式绑定
+// obj.eating() // 隐式绑定
