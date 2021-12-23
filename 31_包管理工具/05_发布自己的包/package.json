@@ -1,21 +1,20 @@
 {
-  "name": "hy_test_utils",
+  "name": "dif_test_asdwadas",
   "version": "1.1.0",
   "description": "a test utils",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "coderwhy",
+  "author": "DiF1202",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/coderwhy/coderwhy"
+    "url": "https://github.com/DiF1202/DiF1202"
   },
-  "homepage": "https://github.com/coderwhy/coderwhy",
+  "homepage": "https://github.com/DiF1202/DiF1202",
   "keywords": [
-    "why",
-    "coderwhy",
+    "DiF1202",
     "utils"
   ]
 }
